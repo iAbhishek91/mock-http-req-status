@@ -1,0 +1,15 @@
+{
+  "name": "mock-http-req-status",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:iAbhishek91/mock-http-req-status.git",
+  "author": "Abhishek Das <i.abhishek.dass@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "docker:build": "docker build . -t abdas81/mock-http-req-status:3p",
+    "docker:run": "docker run -d --name mockResponse -p 1222:1221 abdas81/mock-http-req-status:3p"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
