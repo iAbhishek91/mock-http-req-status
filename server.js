@@ -3,7 +3,12 @@ const Express = require('express');
 const PORT = 1221;
 
 global.REQ_COUNT = 0;
-const NUMBER_OF_200 = 3;
+
+const NUMBER_OF_200 = process.env.NUMBER_OF_200;
+// 3
+// process.argv[2]
+// process.env.NUMBER_OF_200
+
 const IS_RANDOM = false;
 
 

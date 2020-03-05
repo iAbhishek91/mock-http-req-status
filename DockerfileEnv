@@ -1,0 +1,11 @@
+FROM node:13.8.0-alpine3.11
+
+RUN mkdir app
+
+WORKDIR /app
+
+COPY . .
+
+RUN yarn
+
+ENTRYPOINT [ "node", "server.js" ]
