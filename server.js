@@ -18,15 +18,19 @@ const app = Express();
 app.get('/', (_, res) => {
   REQ_COUNT += 1;
 
+  // reset REQ_COUNT
+  if (REQ_COUNT === 12) {
+    REQ_COUNT = 0
+  }
+
+  console.log('req count: ' + REQ_COUNT);
   // first two request is always 200
-  if ( REQ_COUNT <= 2 ) {
+  if ( REQ_COUNT % 2 ) {
     res.status(200).send('200');
-  } else if ( IS_RANDOM ) {
-    (Math.round(Math.random() * 10) % 2) ? res.status(200).send('200') : res.status(400).send('400');
-  } else if ( REQ_COUNT <= NUMBER_OF_200 ) {
-    res.status(200).send('200');
+    console.log('passed');
   } else {
     res.status(400).send('400');
+    console.log('Fail');
   }
 });
 
