@@ -10,6 +10,6 @@
     "docker:run": "docker run -d --name mockResponse -p 1222:1221 abdas81/mock-http-req-status:3p"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   }
 }
